@@ -13,12 +13,12 @@ class DataSchema:
     LOCATION_SCOTIA_CC = "Address"
     DATE_SCOTIA_CC = "Posted Date"
 
-class DataSchema_Sources:
-    SCOTIA_CC_E = "scotia-cc-erfan"
+    #Source-Person IDs
+    SOURCE_SCOTIA_CC_E = "scotia-cc-erfan"
 
 def load_credit_card_statement(path: str, source) -> pd.DataFrame:
     # which bank/ person? #TODO
-    if source == DataSchema_Sources.SCOTIA_CC_E:
+    if source == DataSchema.SOURCE_SCOTIA_CC_E:
         # load the data from the CSV file
         data = pd.read_csv(
             path,

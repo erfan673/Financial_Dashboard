@@ -1,6 +1,6 @@
 import pandas as pd
 from dash import Dash, html
-from src.components import dropdown, barcharts
+from src.components import table_processor
 
 def create_layout(app: Dash, data: pd.DataFrame) -> html.Div:
 
@@ -10,12 +10,6 @@ def create_layout(app: Dash, data: pd.DataFrame) -> html.Div:
         children=[
             html.H1(app.title),
             html.Hr(),
-            html.Div(
-                className="dropdown-container",
-                children=[
-                    dropdown.render(app)
-                ]
-            ),
-            barcharts.render(app)
+            table_processor.render(app, data)
         ]
     )
