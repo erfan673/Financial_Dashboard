@@ -31,3 +31,5 @@ def render(app:Dash, data:pd.DataFrame) -> html.Div:
         return None
     return table_div
 
+
+

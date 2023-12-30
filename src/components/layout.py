@@ -1,8 +1,9 @@
 import pandas as pd
 from dash import Dash, html
-from src.components import table_processor
+from src.components import table_processor, uploader
+from dash import dcc
 
-def create_layout(app: Dash, data: pd.DataFrame) -> html.Div:
+def create_layout(app: Dash) -> html.Div:
 
 
     return html.Div(
@@ -10,6 +11,7 @@ def create_layout(app: Dash, data: pd.DataFrame) -> html.Div:
         children=[
             html.H1(app.title),
             html.Hr(),
-            table_processor.render(app, data)
+            uploader.render(app),
+            # table_processor.render(app, data)
         ]
     )
